@@ -3,8 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import Menu from './Components/MenuComponent';
 import { Navbar, NavbarBrand} from 'reactstrap';
+import { DISHES } from './shared/dishes';
 
 function App() {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      dishes = DISHES
+    };
+  }
+
   return (
     <div className="App">
       <Navbar dark color="primary">
@@ -14,7 +24,7 @@ function App() {
           </NavbarBrand>
         </div>
       </Navbar>
-      <Menu />
+      <Menu dishes={this.state.dishes}/>
     </div>
   );
 }
